@@ -1,15 +1,23 @@
 package flinkTest
-
-import org.apache.flink.api.scala.ExecutionEnvironment
+import org.junit.Test
 
 /**
  * Hello world!
  *
  */
 object App {
-  def main(args: Array[String]): Unit = {
+
+    @Test
+    def test22(): Unit={
+
+    }
+
+
+
+
+//  def main(args: Array[String]): Unit = {
   
-    val env = ExecutionEnvironment.getExecutionEnvironment
+//    val env = ExecutionEnvironment.getExecutionEnvironment
 //    val text = env.fromElements(
 //      "Who's there?",
 //      "I think I hear them. Stand, ho! Who's there?")
@@ -21,5 +29,5 @@ object App {
 //
 //    counts.print()
     
-  }
+//  }
 }
