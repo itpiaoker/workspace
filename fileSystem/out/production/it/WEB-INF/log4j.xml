@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="Console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d (%-4r ms) %-5p [%t] %c %x %l: %m%n" />
+		</layout>
+	</appender>
+
+	<!--用于记录普通日志，debug用-->
+	<appender name="LogFile" class="org.apache.log4j.RollingFileAppender">
+		<!--<param name="File" value="G:/logs/fileSystem.log"/>-->
+		 <param name="File" value="/opt/logs/fileSystem.log"/>
+		<param name="append" value="true" />
+		<param name="MaxFileSize" value="1mb" />
+		<param name="maxBackupIndex" value="1000000" />	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+	
+	<!--用于记录异常日志，报警用,要求log4j大于1.2.14以上，并且包含javamail组件-->
+	<!--<appender name="SMTPERROR" class="org.apache.log4j.net.SMTPAppender">-->
+		<!--<param name="BufferSize" value="512" />-->
+		<!--&lt;!&ndash;大小写区分&ndash;&gt;	-->
+	    <!--<param name="SMTPHost" value="smtp.163.com" />-->
+	    <!--<param name="SMTPUsername" value="15910677561" />-->
+	    <!--<param name="SMTPPassword" value="wvpisfqbfhsmvtmg" />-->
+	    <!--<param name="SMTPAuth" value="true" />-->
+	    <!--<param name="SMTPDebug" value="true" />-->
+	    <!--<param name="From" value="15910677561@163.com" />-->
+	    <!--<param name="To" value="909636801@qq.com" />-->
+		<!--&lt;!&ndash;${com.lenovo.lps.node.sn}为启动脚本设定的环境变量，用于通过邮件快速断定哪台机器出现问题&ndash;&gt;-->
+	    <!--<param name="Subject" value="test" />-->
+		<!--&lt;!&ndash;<layout class="org.apache.log4j.PatternLayout">&ndash;&gt;-->
+		<!--<layout class="com.file.util.FileSystemPatternLayout">-->
+			<!--<param name="ConversionPattern" value="%d (%-4r ms) %-5p [%t] %c %x %l: %m%n" />-->
+			<!--<param name="ContentType" value="text/html;charset=UTF-8" />  -->
+			<!--&lt;!&ndash;%l显示代码所在的行数，效率低&ndash;&gt;-->
+		<!--</layout>-->
+	<!--</appender>-->
+	
+	<!--<logger name="com.file.dao" additivity="false">-->
+		<!--<level value="debbug" />		-->
+		<!--<appender-ref ref="Console" />-->
+		<!--<appender-ref ref="LogFile" />-->
+	<!--</logger>-->
+	<!---->
+	<!--<logger name="com.file.controller" additivity="false">-->
+		<!--<level value="debbug" />		-->
+		<!--<appender-ref ref="Console" />-->
+		<!--<appender-ref ref="LogFile" />-->
+	<!--</logger>-->
+	<!--<logger name="com.file.test.FileServiceImplTest" additivity="false">-->
+		<!--<level value="debbug" />		-->
+		<!--<appender-ref ref="Console" />-->
+		<!--<appender-ref ref="LogFile" />-->
+	<!--</logger>-->
+	<!--<logger name="com.file.listener.ServerListener" additivity="false">-->
+		<!--<level value="debbug" />		-->
+		<!--<appender-ref ref="Console" />-->
+		<!--&lt;!&ndash; <appender-ref ref="SMTPERROR" /> &ndash;&gt;-->
+	<!--</logger>-->
+	<!--<logger name="org.springframework" additivity="false">-->
+		<!--<level value="error" />-->
+		<!--<appender-ref ref="Console" />-->
+	<!--</logger>-->
+	<!--<logger name="org.springframework.test" additivity="false">-->
+		<!--<level value="error" />-->
+		<!--<appender-ref ref="Console" />-->
+	<!--</logger>-->
+	<!--<logger name="redis.clients" additivity="false">-->
+		<!--<level value="error" />-->
+		<!--<appender-ref ref="Console" />-->
+	<!--</logger>-->
+	<!--<logger name="org.mybatis" additivity="false">-->
+		<!--<level value="error" />-->
+		<!--<appender-ref ref="Console" />-->
+	<!--</logger>-->
+	<!--<logger name="org.apache" additivity="false">-->
+		<!--<level value="error" />-->
+		<!--<appender-ref ref="Console" />-->
+	<!--</logger>-->
+
+	<root>
+	    <!--global log setting,include java.*-->
+	    <level value="info" />
+		<appender-ref ref="LogFile" />
+	</root>
+
+</log4j:configuration> 

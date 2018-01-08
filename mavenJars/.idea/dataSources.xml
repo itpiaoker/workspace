@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="master222" uuid="a37050e3-4686-47a5-ae24-653ff8260452">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:G:\derby\master222</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="worker222" uuid="7931edf3-5fab-4e69-9ff2-1e15ccfad525">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:G:\derby\worker222</jdbc-url>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="master222" uuid="a37050e3-4686-47a5-ae24-653ff8260452">
+      <database-info product="Apache Derby" version="10.13.1.1 - (1765088)" jdbc-version="4.2" driver-name="Apache Derby Embedded JDBC Driver" driver-version="10.13.1.1 - (1765088)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <introspection-schemas>*:APP</introspection-schemas>
+    </data-source>
+    <data-source name="worker222" uuid="7931edf3-5fab-4e69-9ff2-1e15ccfad525">
+      <database-info product="Apache Derby" version="10.13.1.1 - (1765088)" jdbc-version="4.2" driver-name="Apache Derby Embedded JDBC Driver" driver-version="10.13.1.1 - (1765088)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <introspection-schemas>*:APP</introspection-schemas>
+    </data-source>
+  </component>
+</project>

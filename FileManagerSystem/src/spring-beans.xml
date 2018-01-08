@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+					       http://www.springframework.org/schema/util 
+					       http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	
+<!-- 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	    <property name="configLocation" value="classpath:SqlMapConfig-mysql-config.xml" />
+	</bean> -->
+	
+    <!-- DAO -->
+    
+<!--     <bean id="fileDAO" class="com.file.dao.FileinfoMapper">
+	</bean> -->
+    
+ <!--    <bean id="userDao" class="com.file.dao.impl.AuthUserinfoDAOImpl">
+    	<property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    
+    <bean id="roleDao" class="com.file.dao.impl.AuthRoleDAOImpl">
+    	<property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    
+	<bean id="menuDao" class="com.file.dao.impl.AuthMenuDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<bean id="urlDao"  class="com.file.dao.impl.AuthUrlDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<bean id="fileDAO" class="com.file.dao.impl.FileinfoDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+ -->	
+    <!-- Service -->
+ <!--    <bean id="userService" class="com.file.service.UserServiceImpl">
+    	<property name="userDao" ref="userDao"/>
+        <property name="passwordHelper" ref="passwordHelper"/>
+    </bean>
+    
+    <bean id="MenuService" class="com.file.service.MenuServiceImpl">
+    	<property name="menuDao" ref="menuDao"/>
+    </bean>
+
+    <bean id="roleService" class="com.file.service.RoleServiceImpl">
+    	<property name="roleDao" ref="roleDao"/>
+    </bean>
+		
+    <bean id="passwordHelper" class="com.file.service.PasswordHelper">
+        <property name="algorithmName" value="md5"/>
+        <property name="hashIterations" value="2"/>
+    </bean> -->
+
+	<bean id="fileService" class="com.file.service.impl.FileServiceImpl">
+	</bean>
+	
+	
+<!-- 	<bean id="indexService" class="com.file.service.impl.IndexServiceImpl" />
+	<bean id="redisService" class="com.file.service.impl.RedisServiceImpl" /> -->
+	<!-- <bean id="initIndexData" class="com.file.util.InitIndexData"> <property 
+		name="fileService" ref="fileService"/> <property name="indexService" ref="indexService"/> 
+		</bean> -->
+	
+</beans>

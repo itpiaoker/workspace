@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="fileSystem" default="pack" basedir="..">
+    <!-- Pick up the environment variables -->
+    <property environment="env" />
+
+    <!-- Pick up (user) project properties -->
+    <property file="build/build.properties" />
+	<!-- =============================================== -->
+	<!-- Definitions                                     -->
+	<!-- =============================================== -->
+	<property name="dir.javadoc" value="javadoc" />
+	<property name="dir.lib" value="lib" />
+	<property name="dir.web.lib" value="WebRoot\WEB-INF\lib" />
+	<property name="dir.src" value="src" />
+	<property name="dir.output" value="output" />
+	<property name="dir.output.classes" value="output/classes" />
+	<property name="BUILD_INFO" value="output/classes/META-INF/" />
+
+	<path id="classpath">
+		<fileset dir="${dir.lib}" includes="*.jar" />
+		<fileset dir="${dir.web.lib}" includes="*.jar" />
+		<pathelement location="${dir.lib}" />
+		<pathelement location="${dir.output.classes}" />
+		<pathelement location="${dir.src}" />
+	</path>
+
+	<!-- =============================================== -->
+	<!-- ENV                                             -->
+	<!-- =============================================== -->
+	<target name="env">
+		<echoproperties />
+	</target>
+	<!-- =============================================== -->
+	<!-- INIT                                            -->
+	<!-- =============================================== -->
+	<target name="init">
+		<!-- Directory set up -->
+		<mkdir dir="${basedir}/${dir.output.classes}" />
+	</target>
+	
+	
+	<!-- =============================================== -->
+	<!-- USAGE                                           -->
+	<!-- =============================================== -->
+	<target name="usage" depends="init">
+		<echo message="${basedir}" />
+		<echo message="${dir.src}" />
+		<echo message="" />
+		<echo message="${project.name} build file" />
+		<echo message="------------------------------------------------------" />
+		<echo message="" />
+		<echo message=" Available targets are :" />
+		<echo message="" />
+		<echo message=" usage       --> help on usage" />
+		<echo message=" build       --> builds the project" />
+		<echo message=" pack        --> generates binary files" />
+		<echo message=" docs        --> generates javadocs and HTML source files" />
+		<echo message=" clean       --> cleans up the build directory" />
+		<echo message="" />
+	</target>
+
+
+	<!-- =============================================== -->
+	<!-- BUILD                                           -->
+	<!-- =============================================== -->
+	<target name="build" depends="usage">
+		<javac debug="on" deprecation="true" srcdir="${dir.src}" destdir="${dir.output.classes}" classpathref="classpath" includeAntRuntime="no" source="1.6" encoding="UTF-8" target="1.6" includes="com/**/*java">
+		</javac>
+	</target>
+
+	<target name="pack" depends="clean,build">
+	    <tstamp>
+	        <format property="time" pattern="yyyy MMMM d hh:mm aa" locale="en" />
+	    </tstamp>
+	      <war destfile="${dir.output}/${project.name}.war" webxml="WebRoot\WEB-INF\web.xml">                
+	        <fileset dir="WebRoot">                   
+	            <exclude name="WEB-INF/classes/**/*.*"/>
+	        </fileset>
+	        <classes dir="${dir.output.classes}"/>
+	        <classes dir="${dir.src}">
+	            <include name="**/*.xml"/>
+	            <exclude name="**/*.java"/>
+	        </classes>
+	        <fileset dir="${dir.output.classes}">
+	            <include name="META-INF/*.xml"/>                            
+	        </fileset>
+	        <manifest>          
+	            <attribute name="Release-Version" value="${project.release.version}" />
+	            <attribute name="Built-Time" value="${time}" />
+	        </manifest>
+	    </war>
+		<antcall target="clean-module" />
+	</target>
+	
+	
+	
+	
+	<!-- =============================================== -->
+	<!-- CLEAN                                           -->
+	<!-- =============================================== -->
+	<target name="clean">
+		<delete dir="${dir.output}" />
+	</target>
+	<!-- =============================================== -->
+	<!-- CLEAN-MODULE                                    -->
+	<!-- =============================================== -->
+	<target name="clean-module" unless="debug">
+		<delete dir="${dir.output.classes}" />		
+	</target>
+	<!--
+    ========================================================================
+      JAVA DOC
+    ========================================================================
+    -->
+	<target name="javadoc-for-release" depends="init">
+		<delete dir="${basedir}/${dir.javadoc}" />
+		<mkdir dir="${basedir}/${dir.javadoc}" />
+		<javadoc destdir="${dir.javadoc}"  packagenames="com.*" version="false" author="false" windowtitle="${project.name}">
+			<classpath refid="classpath" />
+			<sourcepath>
+				<pathelement location="${dir.src}" />
+			</sourcepath>
+		</javadoc>
+	</target>
+	
+	<target name="genfiles" description="mybatis official ant task" depends="clean,build">
+       <taskdef name="mbgenerator" classname="org.mybatis.generator.ant.GeneratorAntTask"
+                classpathref="classpath"/>
+       <mbgenerator overwrite="true" configfile="mybatisGeneratorConfig.xml" verbose="true" >        
+       </mbgenerator>
+    </target>
+	
+</project>

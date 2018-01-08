@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="redisManager" class="com.file.redis.RedisManager">
+	    <property name="host" value="123.57.71.227"/>
+	    <property name="port" value="6379"/>
+	    <property name="expire" value="1800"/>
+	    <!-- optional properties -->
+	    <property name="timeout" value="10000"/>
+	    <property name="password" value=""/>
+    </bean>
+    
+<!-- 自定义redisManager-redis -->  
+    <bean id="redisCacheManager" class="com.file.redis.RedisCacheManager">  
+        <property name="redisManager" ref="redisManager" />  
+    </bean>
+    
+    <!-- Realm实现 -->
+    <bean id="userRealm" class="com.file.realm.UserRealm">
+        <property name="userService" ref="userService"/>
+        <property name="cacheManager" ref="redisCacheManager" />
+    </bean>
+    
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="userRealm" />
+		<property name="cacheManager" ref="redisCacheManager" />
+	</bean>
+    
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/login.jsp" />
+		<property name="successUrl" value="/view/index.jsp" />
+		<property name="unauthorizedUrl" value="/error/noperms.jsp" />
+		<property name="filterChainDefinitions">
+			<value>
+				/index.jsp = authc
+				/login.jsp = anon
+				/tologin.jsp = anon
+				/logout.jsp = anon
+				/** = authc
+			</value>
+		</property>
+	</bean>
+    
+    <!-- Shiro生命周期处理器-->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+	<!-- AOP式方法级权限检查 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor">
+		<property name="proxyTargetClass" value="true" />
+	</bean>
+
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean> 
+
+</beans>

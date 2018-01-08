@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration 
+    PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" 
+    "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	
+    <context id="Lfus" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="utf-8" />
+     
+        <!-- 这里引入扩展分页插件 -->
+
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<plugin type="com.plugin.PaginationPlugin" />
+		
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+        </commentGenerator> 
+        
+		<!-- 连接的是本地库 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://123.57.71.227:3306/fileSystem?characterEncoding=utf-8"
+            userId="root" password="123456">
+        </jdbcConnection>
+
+		
+		<javaModelGenerator targetPackage="com.file.model"
+            targetProject="mbg">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="xml" targetProject="mbg">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.file.dao"
+            targetProject="mbg" type="MIXEDMAPPER">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        
+        <table schema="itmoneys" tableName="fileinfo"></table>
+
+<!--         <table schema="itmoneys" tableName="article">
+        	
+        </table>
+
+        <table schema="itmoneys" tableName="xidongwang">
+        </table>
+
+        <table schema="itmoneys" tableName="channel">
+        </table>
+
+        <table schema="itmoneys" tableName="userinfo">
+        	
+        </table>
+
+        <table schema="itmoneys" tableName="role">
+        </table>
+
+        <table schema="itmoneys" tableName="user_role_link">
+        </table>
+
+        <table schema="itmoneys" tableName="permission">
+        </table>
+		
+        <table schema="itmoneys" tableName="role_permission_link">
+        </table> -->
+		
+    </context>
+</generatorConfiguration>

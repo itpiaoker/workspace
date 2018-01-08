@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.file.dao.FileDAO">
+	<resultMap type="FilePO" id="filePOMapper">
+<!-- 		<id property="id" column="id"/>
+		<result property="name" column="name"/> -->
+<!-- 		<result property="shortTitle" column="short_title"/>
+		<result property="description" column="description"/>
+		<result property="author" column="author"/>
+		<result property="origin" column="origin"/>
+		<result property="topLevel" column="top_level"/>
+		<result property="createDate" column="create_date"/>
+		<result property="typeImgUrl" column="type_img_url"/>
+		<result property="titleImgUrl" column="title_img_url"/>
+		<result property="contentImgUrl" column="content_img_url"/>
+		<result property="mediaUrl" column="media_url"/>
+		<result property="status" column="status"/>
+		<result property="isCreateStatic" column="is_create_static"/>
+		<result property="isRecommend" column="is_recommend"/>
+		<result property="text" column="text"/> -->
+	</resultMap>
+	<!-- 查询所有内容 -->
+	<select id="queryAllFilePO" resultMap="filePOMapper" fetchSize="10000" parameterType="PageBean">
+		select * from fileinfo limit #{begin},#{end}
+	</select>
+	
+	<!-- 查询所有内容 -->
+	<select id="totalNumber" resultType="long">
+		select count(id) from fileinfo
+	</select>
+	
+	<update id="updateFile" parameterType="FilePO">
+		UPDATE fileinfo SET name=#{name},path=#{path},parentPath=#{parentPath},depth=#{depth},size=#{size},ext=#{ext},
+				driver=#{driver},isNeedCache=#{isNeedCache},isNeedIndex=#{isNeedIndex} WHERE id=#{id}
+	</update>
+	<!-- 发布内容 -->
+<!-- 	<insert id="insertContent" parameterType="Content" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_content (
+			id,
+			title,
+			short_title,
+			description,
+			author,
+			origin,
+			top_level,
+			create_date,
+			type_img_url,
+			title_img_url,
+			content_img_url,
+			media_url,
+			STATUS,
+			is_create_static,
+			is_recommend,
+			txt2,
+			txt3,
+			txt4,
+			model_id,
+			user_id,
+			content_type_id,
+			program_id
+		)
+		VALUES
+			(
+				#{id},#{title},#{shortTitle},#{description},#{author},#{origin},#{topLevel},#{createDate},
+				#{typeImgUrl},#{titleImgUrl},#{contentImgUrl},#{mediaUrl},#{status},
+				#{isCreateStatic},#{isRecommend},#{txt2},#{txt3},#{txt4},
+				#{model.id},#{user.id},#{contentType.id},#{program.id}
+			)
+	</insert> -->
+	
+	<!-- 删除内容 -->
+<!-- 	<delete id="deleteContent" parameterType="Integer">
+		delete from content where id=#{id}
+	</delete> -->
+	
+	<!-- 查一个 -->
+<!-- 	<select id="selectContentById" parameterType="Integer" resultType="Content">
+		select * from content where id=#{id}
+	</select> -->
+	
+	<!-- 修改内容 -->
+<!-- 	<update id="updateContent" parameterType="Content">
+		update t_content set title=#{title},short_title=#{shortTitle},description=#{description},author=#{author},
+			origin=#{origin},top_level=#{topLevel},create_date=#{createDate},type_img_url=#{typeImgUrl},
+			title_img_url=#{titleImgUrl},content_img_url=#{contentImgUrl},media_url=#{mediaUrl},status=#{status},
+			is_create_static=#{isCreateStatic},is_recommend=#{isRecommend},txt2=#{txt2},txt3=#{txt3},txt4=#{txt4},
+			model_id=#{model.id},user_id=#{user.id},content_type_id=#{contentType.id},program_id=#{program.id}
+	</update> -->
+	
+	<!-- 根据栏目id查询所有内容 -->
+<!-- 	<select id="selectContentByProgamId">
+		select * from content_channel where cid=#{channelId}
+	</select> -->
+	
+</mapper>

@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="javaProExe">
+    <output-path>$PROJECT_DIR$/out/artifacts/javaProExe</output-path>
+    <root id="archive" name="javaProExe.jar">
+      <element id="module-output" name="javaProExe" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

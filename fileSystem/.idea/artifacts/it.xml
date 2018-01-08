@@ -1,0 +1,73 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="it">
+    <output-path>$PROJECT_DIR$/out/production/it</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="fileSystem/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="fileSystem" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="aopalliance-1.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="aspectjrt-1.7.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="aspectjweaver-1.7.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="c3p0-0.9.1.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-beanutils-1.8.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-codec-1.11.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-collections-3.1.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-fileupload-1.3.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-io-2.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-lang-2.4.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-lang3-3.3.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-logging.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="commons-pool2-2.4.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="config-1.3.1.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="ECharts-3.0.0.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="ezmorph-1.0.6.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="freemarker-2.3.19.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="gson-2.2.4.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="IKAnalyzer2012.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="jackson-core-asl-1.8.8.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="jackson-mapper-asl-1.8.8.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="javaee.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="javassist-3.11.0.GA.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="jedis2.8.5.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="jnotify-0.94.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="jstl.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="junit-4.5.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="log4j-1.2.15.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="lucene-analyzers-3.5.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="lucene-core-3.5.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="lucene-highlighter-3.5.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="lucene-join-3.5.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="lucene-queries-3.5.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="lucene-queryparser-3.5.0.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="mail.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="mybatis-3.2.8.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="mybatis-generator-core-1.3.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="mybatis-spring-1.2.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="mysql-connector-java-5.1.19-bin.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="ognl-3.0.6.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="quartz-1.5.2.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="slf4j-api-1.6.1.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="slf4j-log4j12-1.6.1.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-aop-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-aspects-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-beans-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-context-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-context-support-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-core-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-expression-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-jdbc-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-orm-3.2.5.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-test-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-tx-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-web-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="spring-webmvc-3.2.9.RELEASE.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="standard.jar" module-name="fileSystem" />
+          <element id="library" level="module" name="xmltask.jar" module-name="fileSystem" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
