@@ -1,6 +1,9 @@
 package com.itmoneys
 
+import java.util.concurrent.TimeUnit
+
 import akka.actor.{Actor, ActorSystem, Props}
+import akka.util.Timeout
 import com.typesafe.config.ConfigFactory
 
 class MasterServer extends Actor{
@@ -10,6 +13,9 @@ class MasterServer extends Actor{
 			msg match {
 				case "a" =>{
 					println(11)
+					implicit val timeout = Timeout(3, TimeUnit.SECONDS)
+					//akka.tcp://worker@127.0.0.1:19092
+					context.actorSelection("akka.tcp://worker@127.0.0.1:19092/user/worker") ! "a"
 				}
 				case "b" =>{
 					println(22)
@@ -37,12 +43,15 @@ class MasterServer extends Actor{
 	
 }
 
-object MasterServer {
+object MasterServer{
 	def main(args: Array[String]): Unit = {
-//		val conf = ConfigFactory.load("master.conf")
-//		val context: ActorSystem = ActorSystem("master", conf)
-		val context: ActorSystem = ActorSystem("RemoteDemoSystem")
-//		val server = context.actorOf(Props[MasterServer].withDispatcher("akka.dispatcher.server"), "server")
-		val server = context.actorOf(Props[MasterServer], "master")
+		val conf = ConfigFactory.load("master.conf")
+		val actorSystem: ActorSystem = ActorSystem("master", conf)
+//		val actorSystem: ActorSystem = ActorSystem("RemoteDemoSystem")
+		val server = actorSystem.actorOf(Props[MasterServer], "server")
+//		val server = actorSystem.actorOf(Props[MasterServer], "master")
+		server ! "a"
+		
+		
 	}
 }

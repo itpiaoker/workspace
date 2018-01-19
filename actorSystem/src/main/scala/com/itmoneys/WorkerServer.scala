@@ -21,8 +21,11 @@ class WorkerServer extends Actor{
 
 object WorkerServer {
 	def main(args: Array[String]): Unit = {
-//		val workerConf = ConfigFactory.load("worker.conf")
-//		val workerContext: ActorSystem = ActorSystem("master", workerConf)
-//		val worker = workerContext.actorOf(Props[WorkerServer].withDispatcher("akka.dispatcher.server"), "worker")
+		val workerConf = ConfigFactory.load("worker.conf")
+		val workerContext: ActorSystem = ActorSystem("worker", workerConf)
+		val worker = workerContext.actorOf(Props[WorkerServer], "worker")
+		
+		
+		
 	}
 }
