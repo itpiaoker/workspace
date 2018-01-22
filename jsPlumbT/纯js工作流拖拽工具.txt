@@ -1,0 +1,24 @@
+
+
+mxGraph(https://www.2cto.com/kf/201605/504591.html)
+
+jsPlumb开发入门教程（实现html5拖拽连线）(http://www.cnblogs.com/dyllove98/archive/2013/07/28/3221763.html)
+https://jsplumbtoolkit.com/demos.html
+https://github.com/jsplumb/jsplumb
+http://jsplumbtoolkit.com/apidocs/
+jsPlumb.jsAPI阅读笔记(官方文档翻译)(http://www.cnblogs.com/leomYili/p/6346526.html)
+
+
+jsPlumb（1） - 开始使用(https://segmentfault.com/t/jsplumb/blogs)
+jsPlumb（2）-配置
+jsPlumb（3）-基本概念
+jsPlumb（4）-元素拖放
+
+
+jsPlumb之流程图项目总结及实例(http://www.cnblogs.com/leomYili/p/7145445.html)
+
+
+
+
+
+

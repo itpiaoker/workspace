@@ -14,6 +14,9 @@ $(function(){
         DragOptions : { zIndex:2000 },
         Container:"topocontent"
     });
+
+
+
     window.jsp = instance;
     var lineColor = '#2f8e00',
         pstyle = {
