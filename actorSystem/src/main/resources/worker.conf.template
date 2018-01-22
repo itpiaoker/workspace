@@ -1,0 +1,133 @@
+# Dispatcher 默认派发器: default #
+akka.dispatcher.default.type=Dispatcher
+# 使用何种ExecutionService #
+akka.dispatcher.default.executor="fork-join-executor"
+# executor  =  "fork-join-executor" #
+# 配置 fork join 池 #
+# 容纳基于倍数的并行数量的线程数下限 #
+akka.dispatcher.default.fork-join-executor.parallelism-min=1
+#并行数（线程）: ceil(可用CPU数＊倍数） #
+akka.dispatcher.default.fork-join-executor.parallelism-factor=1.0
+#容纳基于倍数的并行数量的线程数上限 #
+akka.dispatcher.default.fork-join-executor.parallelism-max=10
+# Dispatcher  监控派发器：monitor #
+akka.dispatcher.monitor.type=Dispatcher
+# 使用何种ExecutionService #
+akka.dispatcher.monitor.executor="fork-join-executor"
+# executor  =  "fork-join-executor" #
+# 配置 fork join 池 #
+# 容纳基于倍数的并行数量的线程数下限 #
+akka.dispatcher.monitor.fork-join-executor.parallelism-min=1
+#并行数（线程）: ceil(可用CPU数＊倍数） #
+akka.dispatcher.monitor.fork-join-executor.parallelism-factor=1.0
+#容纳基于倍数的并行数量的线程数上限 #
+akka.dispatcher.monitor.fork-join-executor.parallelism-max=10
+# Dispatcher 处理派发器：processor #
+akka.dispatcher.processor.type=Dispatcher
+# 使用何种ExecutionService #
+akka.dispatcher.processor.executor="fork-join-executor"
+# executor  =  "fork-join-executor" #
+# 配置 fork join 池 #
+# 容纳基于倍数的并行数量的线程数下限 #
+akka.dispatcher.processor.fork-join-executor.parallelism-min=1
+#并行数（线程）: ceil(可用CPU数＊倍数） #
+akka.dispatcher.processor.fork-join-executor.parallelism-factor=1.0
+#容纳基于倍数的并行数量的线程数上限 #
+akka.dispatcher.processor.fork-join-executor.parallelism-max=10
+# Dispatcher  服务器派发器：server #
+akka.dispatcher.server.type=Dispatcher
+# 使用何种ExecutionService #
+akka.dispatcher.server.executor="fork-join-executor"
+# executor  =  "fork-join-executor" #
+# 配置 fork join 池 #
+# 容纳基于倍数的并行数量的线程数下限 #
+akka.dispatcher.server.fork-join-executor.parallelism-min=1
+# 并行数（线程）: ceil(可用CPU数＊倍数） #
+akka.dispatcher.server.fork-join-executor.parallelism-factor=1.0
+# 容纳基于倍数的并行数量的线程数上限 #
+akka.dispatcher.server.fork-join-executor.parallelism-max=10
+# Throughput 定义了线程切换到另一个actor之前处理的消息数上限 #
+# 设置成1表示尽可能公平. #
+akka.dispatcher.server.throughput=100
+# Dispatcher  性能指标派发器：metric #
+akka.dispatcher.metric.type=Dispatcher
+# 使用何种ExecutionService #
+akka.dispatcher.metric.executor="fork-join-executor"
+# executor  =  "fork-join-executor" #
+# 配置 fork join 池 #
+# 容纳基于倍数的并行数量的线程数下限 #
+akka.dispatcher.metric.fork-join-executor.parallelism-min=1
+# 并行数（线程） ... ceil(可用CPU数＊倍数） #
+akka.dispatcher.metric.fork-join-executor.parallelism-factor=1.0
+# 容纳基于倍数的并行数量的线程数上限 #
+akka.dispatcher.metric.fork-join-executor.parallelism-max=10
+# Throughput 定义了线程切换到另一个actor之前处理的消息数上限 #
+# 设置成1表示尽可能公平. #
+akka.dispatcher.metric.throughput=1
+# Dispatcher  词法分析派发器：executor #
+akka.dispatcher.executor.type=Dispatcher
+# 使用何种ExecutionService #
+akka.dispatcher.executor.executor="fork-join-executor"
+# executor  =  "fork-join-executor" #
+# 配置 fork join 池 #
+# 容纳基于倍数的并行数量的线程数下限 #
+akka.dispatcher.executor.fork-join-executor.parallelism-min=1
+# 并行数（线程）:ceil(可用CPU数＊倍数） #
+akka.dispatcher.executor.fork-join-executor.parallelism-factor=1.0
+# 容纳基于倍数的并行数量的线程数上限 #
+akka.dispatcher.executor.fork-join-executor.parallelism-max=10
+# Throughput 定义了线程切换到另一个actor之前处理的消息数上限 #
+# 设置成1表示尽可能公平. #
+akka.dispatcher.executor.throughput=1
+
+
+
+//app.store.driver.url="jdbc:derby:./db/master;create = true"
+//app.store.log.location="./logs/derby-master.log"
+//app.knowledge.helper=com.raysdata.zeta.server.hander.KnowledgeHelper
+//akka.actor.provider = akka.cluster.ClusterActorRefProvider
+//akka.extensions = [akka.cluster.client.ClusterClientReceptionist]
+akka.remote.netty.tcp.hostname = 192.168.0.102
+akka.remote.netty.tcp.port = 19092
+akka.remote.log-sent-messages = on
+akka.remote.log-received-messages = on
+//akka.log-dead-letters
+//akka.log-dead-letters-during-shutdown
+
+
+
+
+
+
+
+//akka.cluster.seed-nodes = ["akka.tcp://master@127.0.0.1:19091"]
+//master.web.http.host = 0.0.0.0
+//master.web.http.port = 19090
+//master.web.http.enable = on
+//master.web.https.host = 0.0.0.0
+//master.web.https.port = 19433
+//master.web.https.enable = off
+# This is the Java Key Store used by the restfulapi server #
+//master.web.https.key-store-path = /restfulapi.jks
+# This password is used for decrypting the key store #
+//master.web.https.key-store-password = "raysdata@2014"
+//master.web.auth.enable = off
+//master.web.auth.host = 127.0.0.1
+//master.web.auth.port = 9000
+//master.web.auth.protocol = http
+//master.web.auth.sign-in = /system/login
+//master.web.auth.sign-out = /system/logout
+//master.web.auth.license.enable= off
+//master.web.auth.license.path = /licensefile
+//master.web.auth.authority.validate.path = /tenants/load
+//master.web.auth.authority.validate.enable = on
+//master.web.auth.authority.all = authority/load
+//master.metrics.space-time = 10
+//master.timeout = 15
+# 补充资产信息 #
+//master.dictionary.add.asset.data = off
+//master.html.doc.path = html/doc
+
+# Expired paramete
+//master.web.proxy.elasticsearch.host = 127.0.0.0
+//master.web.proxy.elasticsearch.port = 9200
