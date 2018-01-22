@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="nodesApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div ng-controller="MainCtrl as mc">
+        <div>
+            {{ mc.amount | number}}
+        </div>
+        <div>
+            {{ mc.amount | json}}
+        </div>
+        <div>
+            {{ mc.totalCost | currency}}
+        </div>
+        <div>
+            {{ mc.totalCost | currency:"INR"}}
+        </div>
+        <div>
+            {{ mc.name | uppercase}}
+        </div>
+        <div>
+            {{ mc.name | lowercase}}
+        </div>
+        <div>
+            {{ mc.startTime | date}}
+        </div>
+        <div>
+            {{ mc.startTime | date:'medium'}}
+        </div>
+        <div>
+            {{ mc.startTime | date:'yyyy-MM-dd'}}
+        </div>
+    </div>
+</body>
+
+<script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    angular.module("nodesApp", []).controller("MainCtrl", [
+        function () {
+            var self = this
+            self.amount = "555555"
+            self.totalCost = "44444"
+            self.name = "zhang san"
+            self.startTime = new Date().getTime();
+        }
+    ]);
+
+</script>
+</html>

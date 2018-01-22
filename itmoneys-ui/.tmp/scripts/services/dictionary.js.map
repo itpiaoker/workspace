@@ -1,0 +1,1 @@
+{"version":3,"sources":["services/dictionary.js"],"names":["app","factory","$resource"],"mappings":"AAAA;;AAEAA,IAAIC,QAAQ,4BAAc,UAAUC,WAAW;IAC3C,OAAOA,UAAU;IADrB","file":"dictionary.js","sourcesContent":["'use strict';\r\n\r\napp.factory('Dictionary', function ($resource) {\r\n    return $resource('/dictionary/:id');\r\n});"]}

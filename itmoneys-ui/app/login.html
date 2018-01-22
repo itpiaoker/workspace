@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="login" lang="zh-CN">
+
+<head>
+  <style type="text/css">
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak,
+    .ng-hide:not(.ng-hide-animate) {
+      display: none !important;
+    }
+
+    ng\:form {
+      display: block;
+    }
+
+    .ng-animate-shim {
+      visibility: hidden;
+    }
+
+    .ng-anchor {
+      position: absolute;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>RAYSDATA ZETA-登录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <![endif]-->
+  <!-- build:css styles/login.min.css -->
+  <link rel="stylesheet" href="styles/style_less.css" type="text/css" />
+  <!-- endbuild -->
+</head>
+
+<body class="login-body" ng-controller="LoginController as login" >
+  <!--<div class="container-fluid">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+
+    </div>
+  </div>-->
+  <div class="warp-main">
+    <div class="warp-1024">
+      <div class="logo-img">
+        <img src="images/map.png">
+      </div>
+      <div class="logo-block">
+        <form name="form" class="form-horizontal" autocomplete="off" ng-submit="login.login()" >
+          <div class="login-form">
+            <div class="form-group title">
+              <div class="col-sm-12">
+                <img src="images/logo.png" class="img-responsive">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12 logo-form-img">
+                <input name="username" class="form-control" ng-model="login.username" id="username" type="text" autocomplete="off" disableautocomplete
+                  placeholder="请输入用户名&nbsp;&nbsp;" required set-Focus>
+                <img src="images/login/user.png" alt="" id="userImg">
+                <div ng-show="form.username.$dirty||form.$submitted" class="ng-cloak">
+                  <!--<em class="not-null user" ng-if="form.username.$error.required">请输入用户名</em>-->
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12 logo-form-img logo-password-img">
+                <input name="password" class="form-control" ng-model="login.password" id="password" type="password" autocomplete="off" disableautocomplete
+                  placeholder="请输入密码" required>
+                <img src="images/login/password.png" alt="" id="pwdImg">
+                <div ng-show="form.password.$dirty||form.$submitted" class="ng-cloak">
+                  <!--<em class="not-null pwd" ng-if="form.password.$error.required&&login.username">请输入密码</em>-->
+                </div>
+              </div>
+            </div>
+            <!--<div class="form-group captcha">
+              <div class="col-sm-10">
+                <input name="captcha" id="captcha" class="form-control" ng-model="login.captcha" autocomplete="off" disableautocomplete placeholder="请输入验证码"
+                  required>
+                &lt;!&ndash;<img src="system/auth/captcha" id="captcha_img" ng-click="login.refreshCaptcha($event)">&ndash;&gt;
+                <div ng-show="form.captcha.$dirty||form.$submitted" class="ng-cloak">
+                  <em class="not-null cap" ng-if="form.captcha.$error.required&&login.username&&login.password">请输入验证码</em>
+                </div>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>-->
+            <div class="form-group login-submit">
+              <div class="col-sm-12">
+                <button type="submit" id="submit" class="btn btn-primary btn-auth">登&nbsp;&nbsp;录</button>
+              </div>
+            </div>
+            <div class="form-group ng-cloak" ng-show="login.error">
+              <div class="col-sm-12">
+                <div class="alert alert-danger error" role="alert" ng-bind="login.error"></div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--<div class="container-fluid footerBar">
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
+        <p class="hla_footer">2017@raysdata All rights reserverd</p>
+        <p class="hla_footer">2017@北京睿至大数据有限公司 版权所有</p>
+      </div>
+    </div>-->
+  </div>
+  <!-- build:js scripts/components.login.min.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js scripts/app.login.min.js -->
+  <script src="scripts/app.login.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["services/knowledgeinfo.js"],"names":["app","factory","$resource"],"mappings":"AAAA;;AAAAA,IAAIC,QAAQ,+BAAiB,UAAUC,WAAW;IAC9C,OAAOA,UAAU,sBAAsB,IAAI;;IAD/C","file":"knowledgeinfo.js","sourcesContent":["app.factory('KnowledgeInfo', function ($resource) {\r\n    return $resource('/knowledgeInfo/:id', {}, {\r\n\r\n        }//end\r\n    )\r\n});"]}

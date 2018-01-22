@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="nodesApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body ng-controller="MainCtrl as mc">
+<!--
+    ng-model指令：用于获取用户输入的值并存储在name变量中
+-->
+<!--<input type="text" placeholder="请输入你的姓名" ng-model="name" />-->
+<!--
+    ng-bind指令：与{{}}是等价的
+-->
+<!--<h1>Hello，<span ng-bind="name"></span></h1>-->
+<h1>{{mc.helloMsg}}</h1>
+</body>
+<script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    angular.module("nodesApp", []).controller("MainCtrl", [
+        function () {
+            this.helloMsg = "222222"
+
+        }
+    ]);
+
+</script>
+</html>
