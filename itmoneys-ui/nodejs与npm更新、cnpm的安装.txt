@@ -1,0 +1,50 @@
+
+nodejs与npm更新、cnpm的安装(http://blog.csdn.net/u010620152/article/details/56008359)
+
+
+安装npm全局包gulp,npm install gulp -g;windows环境推荐cnpm替代npm,否则将导致各种错误
+安装npm全局包bower,npm.cmd install bower -g
+安装所有gulp依赖包npm.cmd install
+安装所有前端依赖包bower install
+
+cnpm install gulp -g
+cnpm install bower -g
+cnpm install
+bower install
+
+
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install --save-dev babel-core
+npm install --global gulp
+
+npm uninstall gulp 
+npm install gulp 
+//with global flag and not
+npm install --save-dev gulp 
+//installing babel-register manually w/wo global flag and --save-dev
+npm install babel-register
+npm cache clean
+npm install -g gulp@3.9.0
+npm install --global gulp-cli
+gulp -v
+npm install -D babel
+npm install babel-cli babel-preset-es2015
+
+
+
+gnvm help install
+gnvm install latest
+gnvm install 
+
+gnvm install 6.9.1-x64
+gnvm npm
+
+gnvm npm install gulp -g
+
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+
+
+
+
+
