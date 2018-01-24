@@ -1,0 +1,20 @@
+{
+  "name": "a",
+  "homepage": "https://github.com/itpiaoker/workspace",
+  "authors": [
+    "lianxy <909636801@qq.com>"
+  ],
+  "description": "a",
+  "main": "a",
+  "keywords": [
+    "a"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
