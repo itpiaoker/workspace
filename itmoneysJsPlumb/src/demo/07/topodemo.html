@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+    <title>jsPlumb 1.5.3 - flowchart connectors demonstration - jQuery</title>
+    <link rel="stylesheet" href="topo-all.css">
+    <link rel="stylesheet" href="topo.css">
+
+    <!-- DEP -->
+    <script type="text/javascript" src="../../js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.jsPlumb-1.7.2.js"></script>
+    <script type="text/javascript" src="drawTopo.js"></script>
+    <!-- /DEP -->
+
+    <!-- JS -->
+    <!-- support lib for bezier stuff -->
+    <!--<script src="../jsPlumb/jsBezier-0.6-min.js"></script>-->
+    <!--&lt;!&ndash; jsplumb geom functions &ndash;&gt;-->
+    <!--<script src="../jsPlumb/jsplumb-geom-0.1.js"></script>-->
+    <!--&lt;!&ndash; jsplumb util &ndash;&gt;-->
+    <!--<script src="../jsPlumb/util.js"></script>-->
+    <!--&lt;!&ndash; base DOM adapter &ndash;&gt;-->
+    <!--<script src="../jsPlumb/dom-adapter.js"></script>-->
+    <!--&lt;!&ndash; main jsplumb engine &ndash;&gt;-->
+    <!--<script src="../jsPlumb/jsPlumb.js"></script>-->
+    <!--&lt;!&ndash; endpoint &ndash;&gt;-->
+    <!--<script src="../jsPlumb/endpoint.js"></script>-->
+    <!--&lt;!&ndash; connection &ndash;&gt;-->
+    <!--<script src="../jsPlumb/connection.js"></script>-->
+    <!--&lt;!&ndash; anchors &ndash;&gt;-->
+    <!--<script src="../jsPlumb/anchors.js"></script>-->
+    <!--&lt;!&ndash; connectors, endpoint and overlays  &ndash;&gt;-->
+    <!--<script src="../jsPlumb/defaults.js"></script>-->
+    <!--&lt;!&ndash; connector editors &ndash;&gt;-->
+    <!--<script src="../jsPlumb/connector-editors.js"></script>-->
+    <!--&lt;!&ndash; bezier connectors &ndash;&gt;-->
+    <!--<script src="../jsPlumb/connectors-bezier.js"></script>-->
+    <!--&lt;!&ndash; state machine connectors &ndash;&gt;-->
+    <!--<script src="../jsPlumb/connectors-statemachine.js"></script>-->
+    <!--&lt;!&ndash; flowchart connectors &ndash;&gt;-->
+    <!--<script src="../jsPlumb/connectors-flowchart.js"></script>-->
+    <!--&lt;!&ndash; SVG renderer &ndash;&gt;-->
+    <!--<script src="../jsPlumb/renderers-svg.js"></script>-->
+    <!--&lt;!&ndash; canvas renderer &ndash;&gt;-->
+    <!--<script src="../jsPlumb/renderers-canvas.js"></script>-->
+    <!--&lt;!&ndash; vml renderer &ndash;&gt;-->
+    <!--<script src="../jsPlumb/renderers-vml.js"></script>-->
+
+    <!-- jquery jsPlumb adapter -->
+    <!-- /JS -->
+
+    <!--  demo code -->
+
+    <script type="text/javascript">
+
+        jsPlumb.ready(function() {
+
+
+
+
+            // 拓扑数据结构根节点位置设置
+            var rootPosition = [270, 300];
+            var nodeTypeArray = ['VM', 'DEVICE', 'NC', 'VIP'];
+            var topoData = {
+                type: 'VM', key: '110.75.188.35',
+                rel: [
+                    {
+                        type: 'DEVICE',
+                        key: '3-120343'
+                    },
+
+                    {
+                        type: 'DEVICE',
+                        key: '3-120344'
+                    },
+
+                    {
+                        type: 'VIP',
+                        key: '223.6.250.2',
+                        rel: [
+                            { type: 'VM', key: '110.75.189.12' },
+                            { type: 'VM', key: '110.75.189.13' }
+                        ]
+                    },
+
+                    {
+                        type: 'NC',
+                        key: '10.242.192.2',
+                        rel: [
+                            { type: 'VM', key: '110.75.188.132' },
+                            { type: 'VM', key: '110.75.188.135' }
+                        ]
+
+                    }
+                ]
+            };
+
+            drawTopo(topoData, rootPosition, nodeTypeArray);
+
+            var newTopoData = {
+                type: 'NC',
+                key: '10.242.192.2',
+                rel: [
+                    { type: 'VM', key: '110.75.188.140' }
+                ]
+            };
+
+            var mergedTopoData = mergeNewTopo(topoData, newTopoData);
+            $('#topoRegion').empty();
+            drawTopo(mergedTopoData, rootPosition, nodeTypeArray);
+
+
+
+        });
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+<div id="topoRegion">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+jsplumb学习（一）---初识jsplumb(http://blog.csdn.net/sinat_16039187/article/details/66969546)
+
+mxGraph(https://www.2cto.com/kf/201605/504591.html)
+
+jsPlumb开发入门教程（实现html5拖拽连线）(http://www.cnblogs.com/dyllove98/archive/2013/07/28/3221763.html)
+https://jsplumbtoolkit.com/demos.html
+https://github.com/jsplumb/jsplumb
+http://jsplumbtoolkit.com/apidocs/
+jsPlumb.jsAPI阅读笔记(官方文档翻译)(http://www.cnblogs.com/leomYili/p/6346526.html)
+
+
+jsPlumb（1） - 开始使用(https://segmentfault.com/t/jsplumb/blogs)
+jsPlumb（2）-配置
+jsPlumb（3）-基本概念
+jsPlumb（4）-元素拖放
+
+
+jsPlumb之流程图项目总结及实例(http://www.cnblogs.com/leomYili/p/7145445.html)
+
+jsPlumb 学习笔记(http://blog.csdn.net/dananhai381/article/details/38870615)
+
+利用jsplumb画流程图(http://blog.csdn.net/huang100qi/article/details/74562358)
+	连线上的label
+jsPlumb 中 connection 是否可以动态添加多个overlays(覆盖物)(https://segmentfault.com/q/1010000004289839)
+
+使用 JsPlumb 绘制拓扑图的通用方法(http://blog.csdn.net/lovesqcc/article/details/14003987)
+
+jsPlumb 基本概念(https://www.jianshu.com/p/0e7bb5c081c8)
+
+jsplumb学习（一）---初识jsplumb
+	https://github.com/oOKevinOo/myJsplumb
+
+
+
+
+
+
+
+
+
+
+
+

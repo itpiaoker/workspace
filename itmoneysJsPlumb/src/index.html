@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title22</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jsPlumb-1.7.2.js"></script>
+    <script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        /*.dragActive { border:2px dotted orange; }*/
+        /*.dropHover { border:1px dotted red; }*/
+        .cc {position: relative; width:100%;height: 600px;}
+        .item {
+            background-color: #ddddff;
+            width: 80px;
+            height: 40px;
+            position: absolute;
+        }
+
+        #mysql_in {
+            left: 20px;
+            top: 20px;
+        }
+
+        #mysql_out {
+            left: 20px;
+            top: 100px;
+        }
+
+        #state3 {
+            left: 100px;
+            top: 250px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+    </script>
+
+</head>
+<body>
+    <div class="cc">
+        <div id="mysql_in" class="item">mysql数据源</div>
+        <div id="mysql_out" class="item">mysql输出源</div>
+        <label id="label" class="aLabel">aaaaaaa</label>
+    </div>
+    <!--<div id="left" ng-include="'datasource.html'">-->
+        <!--<ng-include src="datasource.html" onload="expression" autoscroll="expression" ></ng-include>-->
+        <!--<div></div>-->
+        <!--<div id="state1" class="item">mysql</div>-->
+        <!--<div id="state2" class="item"></div>-->
+    <!--</div>-->
+    <!--<div id="right" class="form-group" ng-include="'datasource.html'">-->
+        <!--<ng-include src="datasource.html" onload="expression" autoscroll="expression" ></ng-include>-->
+        <!--<div></div>-->
+    <!--</div>-->
+</body>
+</html>

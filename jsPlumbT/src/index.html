@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="http://localhost:9000/js/angular.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        #left { width:200px;height:600px;}
+        #state1 {
+            left: 100px;
+            top: 100px;
+        }
+    </style>
 </head>
 <body>
-
+    <div id="left" ng-include="'http://localhost:9000/datasource.html'">
+        <ng-include src="datasource.html" onload="expression" autoscroll="expression" ></ng-include>
+        <div></div>
+    </div>
 </body>
 </html>
